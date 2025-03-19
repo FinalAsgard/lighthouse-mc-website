@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -27,6 +27,54 @@
       align-items: center;
       height: 100vh;
       overflow: hidden;
+      animation: fadeIn 1s ease-out;
+      position: relative;
+    }
+
+    /* Fire Twinkle Effect */
+    .fire-twinkle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .fire-twinkle::before,
+    .fire-twinkle::after {
+      content: "";
+      position: absolute;
+      background: rgba(255, 165, 0, 0.7); /* Fire color */
+      border-radius: 50%;
+      animation: fireTwinkle 1.5s infinite alternate;
+    }
+
+    .fire-twinkle::before {
+      width: 10px;
+      height: 10px;
+      top: 50%;
+      left: 30%;
+      animation-delay: 0.2s;
+    }
+
+    .fire-twinkle::after {
+      width: 15px;
+      height: 15px;
+      top: 70%;
+      left: 70%;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fireTwinkle {
+      0% {
+        opacity: 0.7;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
     }
 
     /* Header Styles */
@@ -42,6 +90,7 @@
       justify-content: space-between;
       align-items: center;
       color: white;
+      animation: slideIn 1s ease-out;
     }
 
     .logo {
@@ -84,6 +133,8 @@
       text-align: center;
       max-width: 900px;
       width: 100%;
+      opacity: 0;
+      animation: fadeInUp 1.5s forwards;
     }
 
     .main-container h1 {
@@ -92,6 +143,7 @@
       color: #1c6e8c;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
       margin-bottom: 20px;
+      animation: bounceIn 1s ease-out;
     }
 
     .main-container p {
@@ -113,6 +165,7 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       text-decoration: none;
       margin-top: 15px;
+      animation: fadeIn 1.5s ease-out 0.5s forwards;
     }
 
     .discord-button:hover {
@@ -133,11 +186,61 @@
       color: white;
       font-size: 1.1em;
       width: 100%;
+      animation: fadeInUp 1.5s ease-out 1s forwards;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(10px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Fire Twinkle Effect -->
+  <div class="fire-twinkle"></div>
 
   <!-- Top Header with Logo and Navigation Buttons -->
   <header>
