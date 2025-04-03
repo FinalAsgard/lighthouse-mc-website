@@ -19,9 +19,6 @@
       background-attachment: fixed;
       color: #fff;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
       overflow: hidden;
     }
@@ -70,6 +67,17 @@
       background-color: #3e8e41;
       transform: translateY(2px);
     }
+
+    /* Main Scroll Container */
+    .main-scroll-box {
+        padding-top: 300pt;
+        padding-bottom: 50pt;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+        height: 100%;
 
     .main-container {
       display: flex;
@@ -196,32 +204,34 @@
     </div>
   </header>
 
-  <div class="main-container">
-    <h1>Welcome to LighthouseMC!</h1>
-    <p>We invite you to join our Minecraft server, built on faith and community. Please fill out the request form below to grant your child access to our vibrant world!</p>
-  </div>
+  <section class="main-scroll-box">
+    <div class="main-container">
+        <h1>Welcome to LighthouseMC!</h1>
+        <p>We invite you to join our Minecraft server, built on faith and community. Please fill out the request form below to grant your child access to our vibrant world!</p>
+    </div>
 
-  <div class="form-container">
-    <h2>Server Access Request Form</h2>
-    <form id="request-form" action="submit-form.php" method="POST">
-      <label for="parent-name">Parent's Name</label>
-      <input type="text" id="parent-name" name="parent_name" required>
+    <div class="form-container">
+        <h2>Server Access Request Form</h2>
+        <form id="request-form" action="submit-form.php" method="POST">
+        <label for="parent-name">Parent's Name</label>
+        <input type="text" id="parent-name" name="parent_name" required>
 
-      <label for="child-name">Child's Name</label>
-      <input type="text" id="child-name" name="child_name" required>
+        <label for="child-name">Child's Name</label>
+        <input type="text" id="child-name" name="child_name" required>
 
-      <label for="child-age">Child's Age</label>
-      <input type="number" id="child-age" name="child_age" required>
+        <label for="child-age">Child's Age</label>
+        <input type="number" id="child-age" name="child_age" required>
 
-      <label for="additional-info">Additional Information</label>
-      <textarea id="additional-info" name="additional_info" rows="4" placeholder="Any special requests or details" required></textarea>
+        <label for="additional-info">Additional Information</label>
+        <textarea id="additional-info" name="additional_info" rows="4" placeholder="Any special requests or details" required></textarea>
 
-      <button type="submit">Submit Request</button>
-    </form>
-  </div>
+        <button type="submit">Submit Request</button>
+        </form>
+    </div>
 
-  <!-- Discord Button -->
-  <a href="https://discord.com/invite/fMjWYN2eVh" class="discord-button" target="_blank">Join Our Discord</a>
+    <!-- Discord Button -->
+    <a href="https://discord.com/invite/fMjWYN2eVh" class="discord-button" target="_blank">Join Our Discord</a>
+  </section>
 
   <footer class="footer">
     <p>&#169; 2025 LighthouseMC | Building Faith, One Block at a Time</p>
