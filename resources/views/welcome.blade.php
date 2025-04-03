@@ -18,7 +18,6 @@
       background-position: center;
       background-attachment: fixed;
       color: #fff;
-      display: flex;
       height: 100vh;
       overflow: hidden;
     }
