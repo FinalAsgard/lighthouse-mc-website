@@ -77,6 +77,7 @@
         align-items: center;
         overflow: auto;
         height: 100%;
+    }
 
     .main-container {
       display: flex;
