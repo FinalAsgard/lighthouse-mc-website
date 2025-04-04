@@ -18,7 +18,8 @@
       background-position: center;
       background-attachment: fixed;
       color: #fff;
-      height: 100vh;
+      top: 0; bottom: 0; right: 0; left: 0; 
+      position: absolute;
       overflow: hidden;
     }
 
@@ -68,15 +69,17 @@
     }
 
     /* Main Scroll Container */
+    .main-scroll-box-container {
+        overflow: auto;
+        top: 0; bottom: 0; right: 0; left: 0; position: absolute;
+    }
     .main-scroll-box {
-        padding-top: 300pt;
-        padding-bottom: 50pt;
+        padding-top:100px;
+        padding-bottom:50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow: auto;
-        height: 100%;
     }
 
     .main-container {
@@ -89,7 +92,6 @@
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-      margin-top: 100px;
       max-width: 900px;
       width: 100%;
     }
@@ -204,34 +206,29 @@
     </div>
   </header>
 
-  <section class="main-scroll-box">
-    <div class="main-container">
-        <h1>Welcome to LighthouseMC!</h1>
-        <p>We invite you to join our Minecraft server, built on faith and community. Please fill out the request form below to grant your child access to our vibrant world!</p>
-    </div>
-
-    <div class="form-container">
-        <h2>Server Access Request Form</h2>
-        <form id="request-form" action="submit-form.php" method="POST">
-        <label for="parent-name">Parent's Name</label>
-        <input type="text" id="parent-name" name="parent_name" required>
-
-        <label for="child-name">Child's Name</label>
-        <input type="text" id="child-name" name="child_name" required>
-
-        <label for="child-age">Child's Age</label>
-        <input type="number" id="child-age" name="child_age" required>
-
-        <label for="additional-info">Additional Information</label>
-        <textarea id="additional-info" name="additional_info" rows="4" placeholder="Any special requests or details" required></textarea>
-
-        <button type="submit">Submit Request</button>
-        </form>
-    </div>
-
-    <!-- Discord Button -->
-    <a href="https://discord.com/invite/fMjWYN2eVh" class="discord-button" target="_blank">Join Our Discord</a>
-  </section>
+  <div class="main-scroll-box-container">
+            <section class="main-scroll-box">
+                <div class="main-container">
+                    <h1>Welcome to LighthouseMC!</h1>
+                    <p>We invite you to join our Minecraft server, built on faith and community. Please fill out the request form below to grant your child access to our vibrant world!</p>
+                </div>
+                <div class="form-container">
+                    <h2>Server Access Request Form</h2>
+                    <form id="request-form" action="submit-form.php" method="POST">
+                        <label for="parent-name">Parent's Name</label>
+                        <input type="text" id="parent-name" name="parent_name" required>
+                        <label for="child-name">Child's Name</label>
+                        <input type="text" id="child-name" name="child_name" required>
+                        <label for="child-age">Child's Age</label>
+                        <input type="number" id="child-age" name="child_age" required>
+                        <label for="additional-info">Additional Information</label>
+                        <textarea id="additional-info" name="additional_info" rows="4" placeholder="Any special requests or details" required></textarea>
+                        <button type="submit">Submit Request</button>
+                    </form>
+                </div>
+                <!-- Discord Button --><a href="https://discord.com/invite/fMjWYN2eVh" class="discord-button" target="_blank">Join Our Discord</a>
+            </section>
+        </div>
 
   <footer class="footer">
     <p>&#169; 2025 LighthouseMC | Building Faith, One Block at a Time</p>
