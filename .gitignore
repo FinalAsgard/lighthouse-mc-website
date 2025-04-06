@@ -21,3 +21,6 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+**/_pgbackup
+**/pinegrow.json
+**/_pginfo
