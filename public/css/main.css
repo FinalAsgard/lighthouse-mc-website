@@ -1,0 +1,98 @@
+.pane {
+    width: fit-content;
+    transition: all 300ms;
+    border-top: 1pt var(--pane-border-color) solid;
+    border-bottom: 3pt var(--pane-border-color) solid;
+    border-left: 1pt var(--pane-border-color) solid;
+    border-right: 3pt var(--pane-border-color) solid;
+    padding: 12pt;
+    border-radius: 15pt;
+    background-color: var(--pane-background-color);
+    backdrop-filter: blur(16pt);
+    filter: drop-shadow(5pt 5pt 10pt var(--pane-shadow-color));
+    color: var(--text-color);
+    text-shadow: 0pt 0pt 1pt var(--text-shadow-color);
+}
+
+.toggle {
+    transition: all 300ms;
+    border-top: 1pt var(--pane-border-color) solid;
+    border-bottom: 3pt var(--pane-border-color) solid;
+    border-left: 1pt var(--pane-border-color) solid;
+    border-right: 3pt var(--pane-border-color) solid;
+    margin: 2pt;
+    padding: 3pt;
+    display: block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: color-mix(in srgb, var(--pane-background-color), #000f);
+    min-width: 32pt;
+    min-height: 12pt;
+    border-radius: 15pt;
+    backdrop-filter: blur(16pt);
+    filter: drop-shadow(5pt 5pt 10pt var(--pane-shadow-color));
+}
+
+.toggle:before {
+    transition: all 300ms;
+    content: "";
+    display: block;
+    position: relative;
+    min-width: 10pt;
+    min-height: 10pt;
+    max-width: 10pt;
+    max-height: 10pt;
+    background-color: var(--pane-border-color);
+    filter: drop-shadow(5pt 5pt 10pt var(--pane-shadow-color));
+    border-radius: 50%;
+}
+.toggle:is([data-state='true']):before {
+    translate: 12pt 0pt;
+}
+.toggle:hover {
+    transform: scale(1.25);
+}
+
+.button {
+    transition: all 300ms;
+    border-top: 1pt var(--pane-border-color) solid;
+    border-bottom: 3pt var(--pane-border-color) solid;
+    border-left: 1pt var(--pane-border-color) solid;
+    border-right: 3pt var(--pane-border-color) solid;
+    background-color: var(--pane-background-color);
+    margin: 2pt;
+    padding: 3pt;
+    border-radius: 15pt;
+    backdrop-filter: blur(16pt);
+    filter: drop-shadow(5pt 5pt 10pt var(--pane-shadow-color));
+
+}
+.button:hover {
+    transform: scale(1.25);
+}
+
+
+@property --scroll-start {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+@property --scroll-end {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+@property --scroll-diff{
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+@property --scroll-percent{
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+.scroll-watch {
+    --scroll-diff: calc(var(--scroll-end) - var(--scroll-start));
+    --scroll-percent: calc(clamp(var(--scroll-start),var(--scroll-position),var(--scroll-end)) / var(--scroll-diff));
+}

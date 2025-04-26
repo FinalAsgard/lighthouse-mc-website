@@ -1,0 +1,290 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-out;
+}
+html:is([data-season='spring'][data-color-mode='light']) {
+    body{
+        background-image: url("../img/spring-day.webp");
+    }
+}
+html:is([data-season='spring'][data-color-mode='dark']) {
+    body{
+        background-image: url("../img/spring-night.webp");
+    }
+}
+html:is([data-season='summer'][data-color-mode='light']) {
+    body{
+        background-image: url("../img/summer-day.webp");
+    }
+}
+html:is([data-season='summer'][data-color-mode='dark']) {
+    body{
+        background-image: url("../img/summer-night.webp");
+    }
+}
+html:is([data-season='fall'][data-color-mode='light']) {
+    body{
+        background-image: url("../img/fall-day.webp");
+    }
+}
+html:is([data-season='fall'][data-color-mode='dark']) {
+    body{
+        background-image: url("../img/fall-night.webp");
+    }
+}
+html:is([data-season='winter'][data-color-mode='light']) {
+    body{
+        background-image: url("../img/winter-day.webp");
+    }
+}
+html:is([data-season='winter'][data-color-mode='dark']) {
+    body{
+        background-image: url("../img/winter-night.webp");
+    }
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    height: 100px;
+}
+
+header .header-div{
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    top: 0pt;
+    left: 0pt;
+    right: 0pt;
+    border-bottom: 3pt var(--pane-border-color) solid;
+    padding: 8pt;
+    background-color: var(--pane-background-color);
+    backdrop-filter: blur(16pt);
+    box-shadow: 0pt 0pt 10pt var(--pane-shadow-color);
+    color: #fff;
+    text-shadow: 0pt 0pt 1pt #000;
+}
+
+/* Fire Twinkle Effect */
+.fire-twinkle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.fire-twinkle::before,
+.fire-twinkle::after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 165, 0, 0.7); /* Fire color */
+    border-radius: 50%;
+    animation: fireTwinkle 1.5s infinite alternate;
+}
+
+.fire-twinkle::before {
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 30%;
+    animation-delay: 0.2s;
+}
+
+.fire-twinkle::after {
+    width: 15px;
+    height: 15px;
+    top: 70%;
+    left: 70%;
+    animation-delay: 0.5s;
+}
+
+@keyframes fireTwinkle {
+    0% {
+    opacity: 0.7;
+    transform: scale(0.8);
+    }
+    100% {
+    opacity: 1;
+    transform: scale(1.2);
+    }
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-buttons a,a:link, a:visited {
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Main Container */
+.main-container {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    animation: fadeInUp 1.5s forwards;
+}
+
+.main-container h1 {
+    font-size: 3.2em;
+    font-family: 'Minecraft', sans-serif;
+    color: #1c6e8c;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    animation: bounceIn 1s ease-out;
+}
+
+.main-container p {
+    font-size: 1.4em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+/* Discord Button */
+.discord-button {
+    background-color: #7289da;
+    color: white;
+    padding: 20px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    margin-top: 15px;
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
+}
+
+.discord-button:hover {
+    transform: translateY(-5px);
+    background-color: #5b6eae;
+}
+
+.discord-button:active {
+    transform: translateY(2px);
+    background-color: #4e5a8d;
+}
+
+/* Footer Styles */
+footer {
+    height: 58px;
+    width: 100%;
+}
+footer .footer {
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    color: white;
+    font-size: 1.1em;
+    width: 100%;
+    animation: fadeInUp 1.5s ease-out 1s forwards;
+}
+footer .page-settings {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+}
+footer .page-settings ul {
+    display: none;
+    flex-direction: column;
+    position: relative;
+    list-style-type: none;
+    padding: 2pt;
+    bottom: 100%;
+}
+footer .page-settings:focus-within ul {
+    display: flex;
+}
+footer .page-settings ul li .button{
+    width: 100%;
+}
+footer .page-settings .settings-button {
+    background: none;
+    border: none;
+}
+footer .page-settings:focus-within .settings-button svg{
+    transform: rotate(180deg);
+}
+footer .page-settings .settings-button svg {
+    transition: all ease-in-out 300ms;
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    transform: translateY(50px);
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+    transform: translateY(-50px);
+    opacity: 0;
+    }
+    100% {
+    transform: translateY(0);
+    opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+    transform: translateY(-20px);
+    opacity: 0;
+    }
+    60% {
+    transform: translateY(10px);
+    opacity: 1;
+    }
+    100% {
+    transform: translateY(0);
+    }
+}

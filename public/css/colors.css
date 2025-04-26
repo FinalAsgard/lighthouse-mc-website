@@ -1,0 +1,28 @@
+html:is([data-season='spring']) {
+    --pane-background-color: light-dark(#fcc4,#5334);
+    --pane-border-color: light-dark(#fcc,#966);
+    --pane-shadow-color: light-dark(#5334,#fcc4);
+    --text-color: light-dark(#222,#ddd);
+    --text-shadow-color: light-dark(#ddd,#222);
+}
+html:is([data-season='summer']) {
+    --pane-background-color: light-dark(#bfb4,#1414);
+    --pane-border-color: light-dark(#afa,#5a5);
+    --pane-shadow-color: light-dark(#1414,#bfb4);
+    --text-color: light-dark(#222,#ddd);
+    --text-shadow-color: light-dark(#ddd,#222);
+}
+html:is([data-season='fall']) {
+    --pane-background-color: light-dark(#f854,#8414);
+    --pane-border-color: light-dark(#d63,#f62);
+    --pane-shadow-color: light-dark(#8414,#f854);
+    --text-color: light-dark(#222,#ddd);
+    --text-shadow-color: light-dark(#ddd,#222);
+}
+html:is([data-season='winter']) {
+    --pane-background-color: light-dark(#78f4,#3594);
+    --pane-border-color: light-dark(#56d,#35c);
+    --pane-shadow-color: light-dark(#3594,#78f4);
+    --text-color: light-dark(#222,#ddd);
+    --text-shadow-color: light-dark(#ddd,#222);
+}
