@@ -94,5 +94,7 @@
 }
 .scroll-watch {
     --scroll-diff: calc(var(--scroll-end) - var(--scroll-start));
-    --scroll-percent: calc(clamp(var(--scroll-start),var(--scroll-position),var(--scroll-end)) / var(--scroll-diff));
+    --scroll-normalized: calc(var(--scroll-position) - var(--scroll-start));
+    --scroll-end-normalized: calc(var(--scroll-end) - var(--scroll-start));
+    --scroll-percent: calc(clamp(0,var(--scroll-normalized),var(--scroll-end-normalized)) / var(--scroll-diff));
 }
