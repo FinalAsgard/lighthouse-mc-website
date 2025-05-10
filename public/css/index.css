@@ -1,0 +1,95 @@
+body {
+    transition: all 1.5s;
+    padding: 0pt;
+    margin: 0pt;
+    background-size: cover;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+html:is([data-season='spring'][data-color-mode='light']) {
+    body{
+        background-image: url("../img/spring-day.webp");
+    }
+}
+html:is([data-season='spring'][data-color-mode='dark']) {
+    body{
+        background-image: url("../img/spring-night.webp");
+    }
+}
+html:is([data-season='summer'][data-color-mode='light']) {
+    body{
+        background-image: url("../img/summer-day.webp");
+    }
+}
+html:is([data-season='summer'][data-color-mode='dark']) {
+    body{
+        background-image: url("../img/summer-night.webp");
+    }
+}
+html:is([data-season='fall'][data-color-mode='light']) {
+    body{
+        background-image: url("../img/fall-day.webp");
+    }
+}
+html:is([data-season='fall'][data-color-mode='dark']) {
+    body{
+        background-image: url("../img/fall-night.webp");
+    }
+}
+html:is([data-season='winter'][data-color-mode='light']) {
+    body{
+        background-image: url("../img/winter-day.webp");
+    }
+}
+html:is([data-season='winter'][data-color-mode='dark']) {
+    body{
+        background-image: url("../img/winter-night.webp");
+    }
+}
+header {
+    height: 120pt;
+}
+main{
+    padding-left: 100pt;
+    padding-right:100pt;
+}
+header .logo-div{
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    top: 0pt;
+    left: 0pt;
+    right: 0pt;
+    border-bottom: 3pt var(--pane-border-color) solid;
+    padding: 3pt;
+    background-color: var(--pane-background-color);
+    backdrop-filter: blur(16pt);
+    box-shadow: 0pt 0pt 10pt var(--pane-shadow-color);
+    color: #fff;
+    text-shadow: 0pt 0pt 1pt #000;
+}
+header .theme-buttons {
+    align-self: end;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+}
+
+
+
+.logo {
+    --scroll-start: 0;
+    --scroll-end: 150;
+    --position: calc(1 - var(--scroll-percent));
+    transition: 800ms;
+    animation-timing-function: ease-in-out;
+    translate: calc(32pt * var(--position)) calc(112pt * var(--position));
+    transform: scale(calc(2 * var(--position) + 1));
+    width:32pt;
+    height:32pt;
+}
